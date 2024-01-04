@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    >
+
+    <!--<FrameLayout
+        android:id="@+id/logViewFrame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        >
+        <com.sandvik.newtraxdatabearerdev.gui.log.LogView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
+    &lt;!&ndash; This layout is used only to add 10dp padding to left &ndash;&gt;
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#1C1C1C"
+        android:elevation="4dp"
+        android:minHeight="?attr/actionBarSize"
+        android:textColor="#FFFFFF"
+        android:textColorSecondary="#FFFFFF"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:title=""
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="164dp"
+                android:layout_height="164dp"
+                android:adjustViewBounds="true"
+                android:foregroundGravity="left"
+                android:scaleType="fitXY"
+                android:src="@drawable/newtraxlogogreen" />
+
+            <TextView
+                android:layout_width="128dp"
+                android:layout_height="39dp"
+                android:layout_marginLeft="30dp"
+                android:text="DataBearer"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#323030"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="20dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/wifiDirectHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2mm"
+                android:text="Hotspot Connection:"
+                android:textStyle="bold"
+                android:theme="@style/H1" />
+
+            <ToggleButton
+                android:id="@+id/hotspotToggle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2mm"
+                android:backgroundTint="#000000"
+                android:textColor="#148519" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/connectionTypeHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2mm"
+                android:text="@string/optimine_connection"
+                android:textStyle="bold"
+                android:theme="@style/H1" />
+
+
+        </LinearLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/headerMobileOutbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2mm"
+                android:text="Mobile outbox"
+                android:theme="@style/H2" />
+
+            &lt;!&ndash; holds outbox file count and label for it &ndash;&gt;
+            <LinearLayout
+                android:id="@+id/pendingReportsLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/headerMobileOutbox"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/pendingReportsValue"
+                    android:textColor="#FFFFFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFFFF"
+                    android:text=" pending files" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/cloudConnStateIcon"
+                android:layout_width="6mm"
+                android:layout_height="6mm"
+                android:layout_alignRight="@+id/headerMobileOutbox"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:adjustViewBounds="true"
+                android:foregroundGravity="right"
+                android:scaleType="fitXY"
+                android:src="@drawable/pending_black_100x100" />
+
+        </RelativeLayout>
+
+        &lt;!&ndash; horizontal spacer line &ndash;&gt;
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dip"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="#000000" />
+
+        &lt;!&ndash; layout for "Data Transfer" and Log button row. &ndash;&gt;
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="Data Transfer"
+                android:textStyle="bold"
+                android:theme="@style/H1" />
+
+            <Button
+                android:id="@+id/logButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="#000000"
+                android:clickable="true"
+                android:paddingLeft="5mm"
+                android:paddingRight="5mm"
+                android:text="Log"
+                android:textStyle="bold"
+                android:textColor="#148519" />
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/dataTransferListView"
+            android:background="#323030"
+            android:textColor="#FFFFFF"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"></ListView>
+
+
+
+    </LinearLayout>-->
+
+</LinearLayout>
